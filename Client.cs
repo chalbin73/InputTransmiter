@@ -9,9 +9,7 @@ using System.Threading;
 using System.Windows.Input;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Input;
 using WindowsInput;
-using Albin.Commons.Logging;
 using InputTransmiter.Core;
 using InputTransmiter.Language;
 
