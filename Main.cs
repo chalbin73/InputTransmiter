@@ -25,7 +25,6 @@ namespace InputTransmiter
         {
             InitializeComponent();
             languages = new string[2] { "en", "fr" }; 
-           // comboBox1.SelectedIndex = 0;
 
             this.FormClosing += this_close;
 
