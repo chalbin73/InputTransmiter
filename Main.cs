@@ -38,7 +38,7 @@ namespace InputTransmiter
             FileIniDataParser settingsParse = new FileIniDataParser();
             IniData settings = settingsParse.ReadFile("settings.ini");
 
-            comboBox1.SelectedIndex = languages.ToList<string>().IndexOf(Program.Language);
+            comboBox1.SelectedIndex = languages.ToList<string>().IndexOf(settings["settings"]["lang"]);
             Program.Language = settings["settings"]["lang"];
             Lang.LoadLang(languages[Math.Max(Math.Min(comboBox1.SelectedIndex, 0),1)]);
             loadNames();
