@@ -9,6 +9,9 @@ namespace InputTransmiter
 {
     public static class Program
     {
+        public static Version version = Version.Parse("0.0.0.1");
+        
+
         public static Log log = new Log();
         public static string Language;
         

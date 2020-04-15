@@ -29,6 +29,10 @@ namespace InputTransmiter
             InitializeComponent();
             
             this.FormClosing += this_close;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
+            statusStrip1.Items[0].ForeColor = Color.Red;
+            statusStrip1.Items[0].Text = lang.strings["ncon"];
 
             lang = new Lang();
             client = new NetworksUtilsClient();
@@ -55,11 +59,12 @@ namespace InputTransmiter
         private void button1_Click(object sender, EventArgs e)
         {
             if (!client.connect(textBox1.Text, (int)numericUpDown1.Value)){
-                MessageBox.Show("Erreur de connexion ...");
+                MessageBox.Show(lang.strings["conMsg"]);
                 return;
-
-
             }
+            statusStrip1.Items[0].ForeColor = Color.Green;
+            statusStrip1.Items[0].Text = lang.strings["con"];
+
             connect = true;
             button2.Enabled = true;
         }
@@ -114,6 +119,11 @@ namespace InputTransmiter
             groupBox1.Enabled = true;
             this.KeyDown -= this_keyDown;
             this.KeyUp -= this_keyUp;
+        }
+
+        private void Client_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

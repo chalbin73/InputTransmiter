@@ -19,22 +19,29 @@ namespace InputTransmiter
     {
 
         public Lang Lang = new Lang();
+        public string[] languages;
         
         public Main()
         {
             InitializeComponent();
+            languages = new string[2] { "en", "fr" }; 
+           // comboBox1.SelectedIndex = 0;
 
             this.FormClosing += this_close;
 
             Lang = new Lang();
             Program.log.addLoggingElement(Lang.log);
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
+            statusStrip1.Items[0].Text = "Version : " + Program.version.ToString();
 
             FileIniDataParser settingsParse = new FileIniDataParser();
             IniData settings = settingsParse.ReadFile("settings.ini");
-            comboBox1.SelectedItem = settings["settings"]["lang"];
+
+            comboBox1.SelectedIndex = languages.ToList<string>().IndexOf(Program.Language);
             Program.Language = settings["settings"]["lang"];
-            Lang.LoadLang(comboBox1.Text);
+            Lang.LoadLang(languages[Math.Max(Math.Min(comboBox1.SelectedIndex, 0),1)]);
             loadNames();
         }
 
@@ -64,9 +71,10 @@ namespace InputTransmiter
             FileIniDataParser iniFile = new FileIniDataParser();
             IniData iniData = iniFile.ReadFile("settings.ini");
 
-            iniData["settings"]["lang"] = comboBox1.SelectedItem.ToString();
+            iniData["settings"]["lang"] = languages[comboBox1.SelectedIndex];
             iniFile.WriteFile("settings.ini", iniData);
-            Lang.LoadLang(comboBox1.Text);
+            Program.Language = iniData["settings"]["lang"];
+            Lang.LoadLang(languages[comboBox1.SelectedIndex]);
             loadNames();
         }
 
