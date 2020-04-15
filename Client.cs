@@ -31,9 +31,6 @@ namespace InputTransmiter
             this.FormClosing += this_close;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
-            statusStrip1.Items[0].ForeColor = Color.Red;
-            statusStrip1.Items[0].Text = lang.strings["ncon"];
-
             lang = new Lang();
             client = new NetworksUtilsClient();
             Program.log.addLoggingElement(client.log);
@@ -46,6 +43,8 @@ namespace InputTransmiter
 
             button2.Enabled = button3.Enabled = false;
 
+            statusStrip1.Items[0].ForeColor = Color.Red;
+            statusStrip1.Items[0].Text = lang.strings["ncon"];
         }
 
         private void this_close(object sender, FormClosingEventArgs e)
