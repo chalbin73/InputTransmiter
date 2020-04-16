@@ -25,6 +25,11 @@ On the second player (the one that wants to play remotly) software, click _Clien
  This is super simple. The software reads the keyboard input, send it to the other computer. The software on the other computer 
  simulate the keys that are received.
  
+ <h1>Next imporvments</h1>
+ -An auto updater
+ -A system to disable keys on the server (alt+f4...)
+ -...
+ 
  <h1>Technical informations and credits</h1>
  
  For this project I used **SimpleTcp** made by **BrandonPotter** :
