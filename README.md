@@ -1,6 +1,3 @@
-<h1> THIS PROJECT WILL BE READY SOON</h1>
-
-
 # InputTransmiter
 
 Input transmiter is a simple software that allows you to **remotly control** the keyboard of a computer.
@@ -20,7 +17,8 @@ Then the player that Host the game will click on the _server button_. This'll op
 valid port (later i'll create a button to automaticly set up the server.). Now the server is waiting for a client to connect.
 
 On the second player (the one that wants to play remotly) software, click _Client_. This'll open another window. In the _ip_ text box, you'll have to enter the ip of the server (it can be found on hamachi) and in the _port_ box, enter the port, previously set on the server.
- Finaly on the server computeropen the game, and the remote player will have to click on _start keys sending_ and check if the software window is focused. Of course, you'll need a software like discord to share the screen.
+
+ Finaly on the server computer open the game and check the little box, and the remote player will have to click on _start keys sending_ and check if the software window is focused. Of course, you'll need a software like discord to share the screen.
  
  **<ins> How this works ?</ins>**
  
