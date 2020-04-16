@@ -26,9 +26,9 @@ On the second player (the one that wants to play remotly) software, click _Clien
  simulate the keys that are received.
  
  <h1>Next imporvments</h1>
- -An auto updater
- -A system to disable keys on the server (alt+f4...)
- -...
+<p>-An auto updater</p>
+ <p>-A system to disable keys on the server (alt+f4...)</p>
+ <p>-...</p>
  
  <h1>Technical informations and credits</h1>
  
